@@ -2,7 +2,7 @@
 
 There are many variants online of the following story. This app helps you ensure that the goals you list for yourself tend to be important to you.
 
-===
+***
 
 A professor stood before his class and had some items in front of him. When the class began, wordlessly he picked up a very large and empty glass jar and proceeded to fill it with golf balls. He then asked the students if the jar was full. They agreed that it was.
 
