@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Golfballs</h1>
+
+<%= link_to 'New Goal', new_goal_path %> 
+
+<% @areas.each do |area| %>
+  <table>
+    <tr class="area_header">
+      <th><%= area.name %></th>
+      <td><%= link_to 'Edit', edit_area_path(area), class: 'link_edit' %></td>
+      <td><%= link_to 'Done', area, class: 'link_done', 
+                                    method: :delete, 
+                                    data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% @active_goals.select { |g| g.area_id == area.id }.each do |goal| %>
+    <tr>
+      <td><%= goal.content %></td>
+      <td><%= link_to 'Edit', edit_goal_path(goal), class: 'link_edit' %></td>
+      <td><%= link_to 'Done', goal, class: 'link_done', 
+                                    method: :delete, 
+                                    data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+
+<%= link_to 'New Area', new_area_path %> 
+
+<section class="inactives">
+<table>
+  <tr><th>Inactive Goals (Goals become inactive after 
+        <%= pluralize(@days_to_inactive, "day") %>):</th></tr>
+  <% @inactive_goals.each do |goal| %>
+    <tr>
+      <td><%= goal.content %></td>
+      <td><%= link_to 'Edit', edit_goal_path(goal), class: 'link_edit' %></td>
+      <td><%= link_to 'Done', goal, class: 'link_done', 
+                                    method: :delete, 
+                                    data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+</section>
+

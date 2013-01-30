@@ -1,0 +1,28 @@
+@import "bootstrap";
+
+table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  tr {
+    &.area_header {
+      th {
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+      border-bottom: 1px solid $grayLight;
+    }
+    a.link_edit {
+      color: DarkGoldenRod;
+    }
+    a.link_done {
+      color: Green;
+    }
+  }
+}
+
+.inactives {
+  margin-top: 20px;
+  th {
+      border-bottom: 1px solid $grayLight;
+  }
+}
